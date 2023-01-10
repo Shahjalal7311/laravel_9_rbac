@@ -4,13 +4,14 @@ namespace App;
 
 use Intervention\Image\ImageManagerStatic as Image;
 use  File;
+use Illuminate\Support\Facades\DB;
 
 class ImageHelper
 {
    /*This is last modified function for upload any image*/
     public static function UploadImage($file,$table=null,$directory=null)
     {   
-        $lastData = \DB::table($table)->find(\DB::table($table)->max('id'));
+        $lastData = DB::table($table)->find(DB::table($table)->max('id'));
         if(@$lastData){
             $maxId = $lastData->id+1+rand(100000000,99999999999);
         }else{
