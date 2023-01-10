@@ -1,0 +1,58 @@
+.mainTable{
+	overflow: wrap	
+}
+
+/*.companyTable td{
+ font-size: 100px;
+ 
+ }*/
+ .companyTable{
+ 	text-align: center;
+ 	margin-bottom: 20px;
+ 	/*margin-top: -60px;*/
+ 	/*padding-bottom: -20px;
+ 	border-bottom:: 2px solid #333;*/
+ }
+
+ .title{
+ 	border-bottom: 2px solid #000000;
+
+ }
+
+ .listTable{
+ 	margin-top: 10px;
+ 	border-spacing: 0;
+ 	border-collapse: collapse;
+ }
+
+
+ .top{
+ 	border-top: 1px solid #000000;
+ }
+ .left{
+ 	border-left: 1px solid #000000;
+ }
+ .right{
+ 	border-right: 1px solid #000000;
+ }
+ .bottom: {
+ 	border-bottom: 1px solid #000000;
+ }
+
+
+ .size_font{
+ 	font-size: 100px;
+ }
+/*.itemTable tr td{
+ font-size: 200px;
+ }*/
+
+ footer {
+ 	position: fixed;
+ 	left: 0;
+ 	bottom: 0;
+ 	top: 650;
+
+ }
+
+
