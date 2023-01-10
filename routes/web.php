@@ -30,6 +30,7 @@ Route::prefix('admin')->group(function() {
     Route::middleware('auth:admin')->group(function() {
         Route::group(['middleware' => 'menuPermission'], function() {
             Route::get('/', [App\Http\Controllers\HomeController::class,'index'])->name('admin.index');
+            Route::get('/permission-deny', [App\Http\Controllers\HomeController::class,'permission_view'])->name('admin.permission');
             //Start Menu Section
             Route::resource('menu', App\Http\Controllers\Admin\MenuController::class);
             Route::get('/menu-add', [App\Http\Controllers\Admin\MenuController::class, 'addmenu'])->name('menuadd.page');

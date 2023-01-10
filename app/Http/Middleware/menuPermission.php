@@ -30,13 +30,13 @@ class menuPermission
             if (in_array($userMenus->id, @$rolePermission)) {
                 return $next($request);
             }else{
-                return redirect(route('admin.index'));
+                return redirect(route('admin.permission'));
             }
         }elseif($userMenuAction != null){
             if (in_array($userMenuAction->id, @$actionLinkPermission)) {
                 return $next($request);
             }else{
-                return redirect(route('admin.index'));
+                return redirect(route('admin.permission'));
             }
         }else{
             return $next($request);

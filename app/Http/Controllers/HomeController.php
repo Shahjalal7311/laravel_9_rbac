@@ -26,4 +26,9 @@ class HomeController extends Controller
         $title = "Dashboard";
         return view('admin.dashboard.index')->with(compact('title'));
     }
+
+    public function permission_view(){
+        $title = "Dashboard";
+        return view('admin.dashboard.permission')->with(compact('title'));
+    }
 }
