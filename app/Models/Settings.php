@@ -2,12 +2,16 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Spatie\MediaLibrary\InteractsWithMedia;
+use Spatie\MediaLibrary\HasMedia;
 
-class Settings extends Authenticatable
+class Settings extends Model implements HasMedia
 {
-    use Notifiable;
+    use Notifiable, HasFactory, InteractsWithMedia;
 
     /**
      * The attributes that are mass assignable.
