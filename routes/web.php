@@ -21,11 +21,7 @@ use App\Http\Controllers\FrontendController;
 // });
 
 Route::get('/', [FrontendController::class,'index']);
-Route::get('/admin/login', [App\Http\Controllers\Auth\AdminLoginController::class,'showLoginForm'])->name('admin.login');
-Route::post('/admin/login', [App\Http\Controllers\Auth\AdminLoginController::class,'login'])->name('admin.login');
-//admin panel start here
 Auth::routes();
-
 Route::prefix('admin')->group(function() {
     Route::middleware('auth:admin')->group(function() {
         Route::group(['middleware' => 'menuPermission'], function() {
@@ -85,11 +81,12 @@ Route::prefix('admin')->group(function() {
     });
 
     //Admin Login Url
-    
+    Route::get('/login', [App\Http\Controllers\Auth\AdminLoginController::class,'showLoginForm'])->name('admin.login');
+    Route::post('/login', [App\Http\Controllers\Auth\AdminLoginController::class,'login'])->name('admin.login');
     Route::get('/logout', [App\Http\Controllers\Auth\AdminLoginController::class,'adminLogout'])->name('admin.logout');
     // Route::get('/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
     // Route::post('/login', 'Auth\AdminLoginController@login');
-    // Route::post('/logout', 'Auth\AdminLoginController@adminLogout')->name('admin.logout');
+    Route::post('/logout', [App\Http\Controllers\Auth\AdminLoginController::class,'adminLogout'])->name('admin.logout');
 
     // Password Reset Routes...
     Route::get('/password/reset', [App\Http\Controllers\Auth\AdminForgotPasswordController::class,'passwordForget'])->name('admin.password.forget');

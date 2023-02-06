@@ -2,7 +2,7 @@
 
 @section('content')
 <?php
-    use App\UserMenu;
+    use App\Models\UserMenu;
     $userMenus = UserMenu::orderBy('id','DESC')->first();
     $orderBy = $userMenus->orderBy+1;
 ?>

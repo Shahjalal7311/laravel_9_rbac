@@ -106,7 +106,7 @@ class AdminController extends Controller
 
      public function password($id)
      {
-        $title = "Cahnge Paaword";
+        $title = "Change Paaword";
         $users = Admin::where('id',$id)->first();
         return view('admin.users.changePassword')->with(compact('title','users'));
     }
@@ -117,9 +117,7 @@ class AdminController extends Controller
             
         ]);
         $userId = $request->userId;
-
         $users = Admin::find($userId);
-
         $users->update( [               
             'password' => bcrypt($request->password),                
         ]);
@@ -152,8 +150,6 @@ class AdminController extends Controller
             'email' => 'required',
             'username' => 'required',
             'password' => 'required',
-           
-            
         ]);
     }
 }

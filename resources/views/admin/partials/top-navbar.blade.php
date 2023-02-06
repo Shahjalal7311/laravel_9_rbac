@@ -56,10 +56,10 @@
 
                     <!-- first check admin then user then customer-->
 
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    <form id="logout-form" action="{{ route('admin.logout') }}" method="POST" style="display: none;">
                         {{ csrf_field() }}
                     </form>
-                    <a href="{{ Auth::guard('admin')->check() ? route('admin.logout') : (Auth::guard('web')->check() ? route('user.logout') : (Auth::guard('customer')->check() ? route('customer.logout') : route('logout'))) }}" class="dropdown-item" onclick="event.preventDefault();
+                    <a href="{{ route('admin.logout') }}" class="dropdown-item" onclick="event.preventDefault();
                     document.getElementById('logout-form').submit();"><i class="fa fa-power-off"></i> Logout</a>
                     <!-- text-->
                 </div>

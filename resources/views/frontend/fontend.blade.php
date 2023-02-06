@@ -24,7 +24,7 @@
 	  <main>
 			<section id="wrapper">
 					<div class="container">
-						<div id="content-wrapper">
+						<div id="content-wrapper" style="text-align: center; font-size:22px; margin-top: 30px;">
 							<section id="main">Welcome <a href="/admin/login">Login</a></section>
 					</div>
 				</div>
