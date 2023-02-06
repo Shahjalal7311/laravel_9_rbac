@@ -30,15 +30,9 @@ class RedirectIfAuthenticated
                         return redirect(route('admin.index'));
                     }
                     break;
-                case 'customer':
-                    if(Auth::guard($guard)->check()){
-                        return redirect(route('customer.index'));
-                    }
-                    break;
-                
                 default:
                     if (Auth::guard($guard)->check()) {
-                        return redirect('/home');
+                        return redirect('/');
                     }
                     break;
             }
