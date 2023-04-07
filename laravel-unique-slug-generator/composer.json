@@ -1,0 +1,31 @@
+{
+    "name": "shahjalal/laravel-unique-slug",
+    "description": "Laravel unique slug generator",
+    "type": "composer-plugin",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Shahjalal\\LaravelUniqueSlug\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Shahjalal",
+            "email": "mdjalal2012@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=7.4"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Shahjalal\\LaravelUniqueSlug\\UniqueSlugServiceProvider"
+            ],
+            "aliases": {
+                "UniqueSlug": "Shahjalal\\LaravelUniqueSlug\\UniqueSlug"
+            }
+        }
+    }
+}

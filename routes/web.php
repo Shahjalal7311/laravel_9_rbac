@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Artisan;
 use App\Http\Controllers\FrontendController;
+use Shahjalal\LaravelUniqueSlug\UniqueSlug;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,11 +17,12 @@ use App\Http\Controllers\FrontendController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', function () {
+    $slug = UniqueSlug::generate(App\Models\Admin::class,'shahjalal', 'name');
+    return dd($slug);
+});
 
-Route::get('/', [FrontendController::class,'index']);
+// Route::get('/', [FrontendController::class,'index']);
 Auth::routes();
 Route::prefix('admin')->group(function() {
     Route::middleware('auth:admin')->group(function() {
